@@ -10,23 +10,13 @@
         }
         void registerEnter(object sender, EventArgs e)
         {
-            LblEnterTime.Text = rightNow.ToString("HH:mm");
+            LblEnterTime.Text = "Czas rozpoczęcia: " + rightNow.ToString("HH:mm");
         }
         void registerExit(object sender, EventArgs e)
         {
-            LblEnterTime.Text = " " + rightNow.ToString("HH:mm");
+            LblExitTime.Text = "Czas zakończenia: " + rightNow.ToString("HH:mm");
+            prgBarFrequenty.Progress += 0.1;
         }
-        //private void OnCounterClicked(object sender, EventArgs e)
-        //{
-        //    count++;
-
-        //    if (count == 1)
-        //        CounterBtn.Text = $"Clicked {count} time";
-        //    else
-        //        CounterBtn.Text = $"Clicked {count} times";
-
-        //    SemanticScreenReader.Announce(CounterBtn.Text);
-        //}
     }
 
 }

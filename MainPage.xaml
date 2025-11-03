@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EwidencjaCzasuPracyMAUI.MainPage"
              BackgroundColor="#E3F2FD">
-
     <ScrollView HorizontalOptions="Fill">
         <VerticalStackLayout HorizontalOptions="CenterAndExpand"
             Padding="30,0"
@@ -46,10 +45,39 @@
                 TextColor="Black"
              />
             <ProgressBar 
-            Progress="0.5" 
+            Progress="0" 
             MinimumHeightRequest="20"
-             x:Name="prgBarFrequenty"
+            x:Name="prgBarFrequenty"
                          />
+        <ListView>
+                <ListView.Header>
+                    <Label 
+                        Text="Lista zadań dnia"
+                        FontAttributes="Bold"
+                        FontSize="Title"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        />
+                    </ListView.Header>
+                 <ListView.ItemsSource >
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Spotkanie zespołu 10:00–11:00</x:String>
+                        <x:String>Analiza projektu 12:00–14:00</x:String>
+                        <x:String>Testy funkcjonalne 15:00–16:00</x:String>
+                    </x:Array>
+                 </ListView.ItemsSource>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label
+                                 Text="{Binding .}"
+                                 TextColor="Black"
+                                 FontSize="16"
+                                 Padding="12,8" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </VerticalStackLayout>
     </ScrollView>
 
